@@ -10,14 +10,25 @@ public abstract class CurrentAcc extends BankAcc
 	}
 
 	@Override
-	public void withdraw(float accBal) {
-		// TODO Auto-generated method stub
-		super.withdraw(accBal);
+	public void withdraw(float amount) {
+		  
+//        if (accBal >= amt) {  
+//        	accBal = accBal - amt;  
+//            System.out.println("Balance after withdrawal: " + accBal);  
+//        } else {  
+//            System.out.println("Your balance is less than " + amt + "\tTransaction failed...!!" );  
+//        }  
+		super.withdraw(amount);
 	}
 
 	@Override
 	public String toString() {
-		return "CurrentAcc [creditLimit=" + creditLimit + ", toString()=" + super.toString() + ", getClass()="
-				+ getClass() + ", hashCode()=" + hashCode() + "]";
+		return super.toString();
 	}
+	
+	public float getCreditLimit() {
+		return creditLimit;
+		
+	}
+
 }

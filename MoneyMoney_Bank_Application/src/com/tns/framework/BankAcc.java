@@ -2,9 +2,9 @@ package com.tns.framework;
 
 public abstract class BankAcc 
 {
-	private int accNo;
+	protected int accNo;
 	private String accNm;
-	private float accBal;
+	protected float accBal;
 	
 	public BankAcc(int accNo, String accNm, float accBal) {
 		super();
@@ -12,18 +12,25 @@ public abstract class BankAcc
 		this.accNm = accNm;
 		this.accBal = accBal;
 	}
-	public void withdraw(float accBal)
+	public void withdraw(float amount)
 	{
 		
 	}
-	public void deposit(float accBal)
+	public void deposit(float amount)
 	{
-		
+	    accBal = accBal + amount;
+	    System.out.println("Transaction sucessfully completed");
 	}
 	@Override
 	public String toString() {
 		return "BankAcc [accNo=" + accNo + ", accNm=" + accNm + ", accBal=" + accBal + ", getClass()=" + getClass()
 				+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+	}
+	public float getAccBal() {
+		return accBal;
+	}
+	public void setAccBal(float accBal) {
+		this.accBal = accBal;
 	}
 	
 }

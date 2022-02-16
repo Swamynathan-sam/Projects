@@ -1,21 +1,26 @@
 package com.tns.application;
 
+
 import com.tns.framework.BankFactory;
+import com.tns.framework.CurrentAcc;
 import com.tns.framework.SavingAcc;
 
-public class MMBankFactory extends BankFactory
-{
+public class MMBankFactory extends BankFactory {
 
 	@Override
-	public SavingAcc getNewSavingsAccount(int accNo, String accNm, float accBal, boolean isSalaried) {
+	public SavingAcc getNewSavingsAccount(int AccNO, String accNm, float accBal, boolean isSalaried) {
 		// TODO Auto-generated method stub
-		return null;
+		return new MMSavingsAcc(AccNO, accNm, accBal, isSalaried);
 	}
 
 	@Override
-	public SavingAcc getNewCurrentAccount(int accNo, String accNm, float accBal, float creditLimit) {
+	public CurrentAcc getNewCurrentAccount(int AccNO, String accNm, float accBal, float creditLimit) {
 		// TODO Auto-generated method stub
-		return null;
+		return new MMCurrentAcc(AccNO, accNm, accBal, creditLimit);
 	}
-	
+    @Override
+    public String toString() {
+    	return "MMBankFactory [toString()=" + super.toString()+"]";
+   
+    }
 }

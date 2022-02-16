@@ -2,23 +2,40 @@ package com.tns.framework;
 
 public abstract class SavingAcc extends BankAcc
 {
+	
 	private boolean isSalaried;
-	final static private float MINBAL=500;
+	private static float MINBAL;
 	public SavingAcc(int accNo, String accNm, float accBal, boolean isSalaried) {
 		super(accNo, accNm, accBal);
 		this.isSalaried = isSalaried;
 	}
 
 	@Override
-	public void withdraw(float accBal) {
-		// TODO Auto-generated method stub
-		super.withdraw(accBal);
+	public void withdraw(float amount) {
+//		long amt ;  
+//        System.out.println("Enter the amount you want to withdraw: ");  
+//        amt = sc.nextLong();  
+//        amt= (Long) null;
+//        if(amt>=MINBAL)
+//        {
+//        if (accBal >= amt) {  
+//        	accBal = accBal - amt;  
+//            System.out.println("Balance after withdrawal: " + accBal);  
+//        } else {  
+//            System.out.println("Your balance is less than " + amt + "\tTransaction failed...!!" );  
+//        }  
+//        }
+		super.withdraw(amount);
 	}
 
 	@Override
 	public String toString() {
-		return "SavingAcc [isSalaried=" + isSalaried + ", toString()=" + super.toString() + ", getClass()=" + getClass()
-				+ ", hashCode()=" + hashCode() + "]";
+		return  super.toString();
 	}
-	
+	public boolean isSalaried() {
+		return isSalaried;
+	}
+	public void setSalary(boolean isSalaried) {
+		this.isSalaried = isSalaried;
+	}
 }
